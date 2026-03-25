@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Réparer mon téléphone</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont;
+      background: #f5f5f7;
+      text-align: center;
+      padding: 50px;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      width: 320px;
+      margin: auto;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    select, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+    button {
+      background: black;
+      color: white;
+      font-weight: bold;
+    }
+    #price {
+      font-size: 26px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Réparer votre iPhone</h2>
+
+  <select id="model">
+    <option value="">Choisir un modèle</option>
+    <option value="iphone11">iPhone 11</option>
+    <option value="iphone12">iPhone 12</option>
+    <option value="iphone13">iPhone 13</option>
+    <option value="iphone14">iPhone 14</option>
+    <option value="iphone15">iPhone 15</option>
+    <option value="iphone16">iPhone 16</option>
+  </select>
+
+  <select id="issue">
+    <option value="">Choisir une panne</option>
+    <option value="screen1">Écran cassé LCD (moins cher)</option>
+    <option value="screen2">Écran cassé OLED (qualité d'origine)</option>
+    <option value="battery">Batterie</option>
+    <option value="backglass">Dos en verre</option>
+  </select>
+
+  <div id="price">-- €</div>
+
+  <button onclick="book()">Prendre rendez-vous</button>
+</div>
+
+<script>
+const prices = {
+  iphone11: { screen1: 40, battery: 50, backglass: 50 },
+  iphone12: { screen1: 45, screen2: 90, battery: 60, backglass: 60 },
+  iphone13: { screen1: 50, screen2: 95, battery: 65, backglass: 65 },
+  iphone14: { screen1: 50, screen2: 100, battery: 65, backglass: 65 },
+  iphone15: { screen1: 55, screen2: 110, battery: 65, backglass: 70 },
+  iphone16: { screen1: 60, screen2: 120, battery: 70, backglass: 75 }
+};
+
+const model = document.getElementById("model");
+const issue = document.getElementById("issue");
+const priceDisplay = document.getElementById("price");
+
+function updatePrice() {
+  const m = model.value;
+  const i = issue.value;
+
+  if (m && i) {
+    priceDisplay.innerText = prices[m][i] + " €";
+  } else {
+    priceDisplay.innerText = "-- €";
+  }
+}
+
+model.addEventListener("change", updatePrice);
+issue.addEventListener("change", updatePrice);
+
+function book() {
+  alert("Fonction réservation à venir 🚀");
+}
+</script>
+
+</body>
+</html>
