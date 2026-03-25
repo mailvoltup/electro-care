@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Réparer mon téléphone</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont;
+      background: #f5f5f7;
+      text-align: center;
+      padding: 50px;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      width: 320px;
+      margin: auto;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    select, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+    button {
+      background: black;
+      color: white;
+      font-weight: bold;
+    }
+    #price {
+      font-size: 26px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Réparer votre iPhone</h2>
+
+  <select id="model">
+    <option value="">Choisir un modèle</option>
+    <option value="iphone11">iPhone 11</option>
+    <option value="iphone12">iPhone 12</option>
+    <option value="iphone13">iPhone 13</option>
+  </select>
+
+  <select id="issue">
+    <option value="">Choisir une panne</option>
+    <option value="screen">Écran cassé</option>
+    <option value="battery">Batterie</option>
+  </select>
+
+  <div id="price">-- €</div>
+
+  <button onclick="book()">Prendre rendez-vous</button>
+</div>
+
+<script>
+const prices = {
+  iphone11: { screen: 89, battery: 49 },
+  iphone12: { screen: 119, battery: 59 },
+  iphone13: { screen: 149, battery: 69 }
+};
+
+const model = document.getElementById("model");
+const issue = document.getElementById("issue");
+const priceDisplay = document.getElementById("price");
+
+function updatePrice() {
+  const m = model.value;
+  const i = issue.value;
+
+  if (m && i) {
+    priceDisplay.innerText = prices[m][i] + " €";
+  } else {
+    priceDisplay.innerText = "-- €";
+  }
+}
+
+model.addEventListener("change", updatePrice);
+issue.addEventListener("change", updatePrice);
+
+function book() {
+  alert("Fonction réservation à venir 🚀");
+}
+</script>
+
+</body>
+</html>
