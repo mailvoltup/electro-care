@@ -47,12 +47,16 @@
     <option value="iphone11">iPhone 11</option>
     <option value="iphone12">iPhone 12</option>
     <option value="iphone13">iPhone 13</option>
+    <option value="iphone13">iPhone 14</option>
+    <option value="iphone13">iPhone 15</option>
+    <option value="iphone13">iPhone 16</option>
   </select>
 
   <select id="issue">
     <option value="">Choisir une panne</option>
     <option value="screen">Écran cassé</option>
     <option value="battery">Batterie</option>
+    <option value="battery">Dos en verre</option>
   </select>
 
   <div id="price">-- €</div>
@@ -64,7 +68,10 @@
 const prices = {
   iphone11: { screen: 89, battery: 49 },
   iphone12: { screen: 119, battery: 59 },
-  iphone13: { screen: 149, battery: 69 }
+  iphone13: { screen: 119, battery: 59 },
+  iphone14: { screen: 119, battery: 59 },
+  iphone15: { screen: 119, battery: 59 },
+  iphone16: { screen: 149, battery: 69 }
 };
 
 const model = document.getElementById("model");
