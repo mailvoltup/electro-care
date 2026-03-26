@@ -45,6 +45,8 @@
   <select id="model">
     <option value="">Choisir un modèle</option>
     <option value="iphone11">iPhone 11</option>
+    <option value="iphone11pro">iPhone 11 pro</option>
+    <option value="iphone11promax">iPhone 11 Pro Max</option>
     <option value="iphone12">iPhone 12</option>
     <option value="iphone13">iPhone 13</option>
     <option value="iphone14">iPhone 14</option>
@@ -67,13 +69,15 @@
 
 <script>
 const prices = {
-  iphone11: { screen1: 40, battery: 50, backglass: 50 },
-  iphone12: { screen1: 45, screen2: 90, battery: 60, backglass: 60 },
-  iphone13: { screen1: 50, screen2: 95, battery: 65, backglass: 65 },
-  iphone14: { screen1: 50, screen2: 100, battery: 65, backglass: 65 },
-  iphone14: { screen1: 50, screen2: 95, battery: 65, backglass: 65 },
-  iphone15: { screen1: 55, screen2: 110, battery: 65, backglass: 70 },
-  iphone16: { screen1: 60, screen2: 120, battery: 70, backglass: 75 }
+  iphone11: { screen1: 45, battery: 40, backglass: 40 },
+  iphone11pro: { screen1: 45, screen2: 100, battery: 50, backglass: 40 },
+  iphone11promax: { screen1: 50, screen2: 100, battery: 50, backglass: 40 },
+  iphone12: { screen1: 50, screen2: 90, battery: 50, backglass: 40 },
+  iphone13: { screen1: 50, screen2: 95, battery: 50, backglass: 40 },
+  iphone14: { screen1: 50, screen2: 100, battery: 50, backglass: 50 },
+  iphone14: { screen1: 55, screen2: 95, battery: 50, backglass: 50 },
+  iphone15: { screen1: 60, screen2: 110, battery: 50, backglass: 50 },
+  iphone16: { screen1: 65, screen2: 120, battery: 50, backglass: 50 }
 };
 
 const model = document.getElementById("model");
